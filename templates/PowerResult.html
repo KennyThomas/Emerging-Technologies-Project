@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
-   <body>
-       <h1> {{ prediction }}</h1>
+   <body style="background-color:  rgb(104, 180, 224);">
+    <h1 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Predicted power is </h1>
+    <h1 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> {{ prediction }}</h1>
+    <div class="wrapper" style="text-align: center;"> 
+    <button  style="border-radius: 1rem; height: 3rem; width: 12rem;margin: auto ;"onclick="goBack()">Enter another speed</button>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
    </body>
 </html>

@@ -11,10 +11,10 @@ def index():
 
 
 
-def ValuePredictor(speed):
+def getPower(speed):
  to_predict = speed
- loaded_model = pickle.load(open('model.pkl','rb'))   #Load in the model
- result = loaded_model.predict([[to_predict]])  #use the predict function in the model and pass in speed value
+ model = pickle.load(open('model.pkl','rb'))   #Load in the model
+ result = model.predict([[to_predict]])  #use the predict function in the model and pass in speed value
  return result[0]
 
 
@@ -22,7 +22,7 @@ def ValuePredictor(speed):
 def result():
  if request.method == "POST":
    speed = first_name = request.form.get("speed")  # Get the speed value entered
-   result = ValuePredictor(speed)  # Pass the speed value into the model and return the result
+   result = getPower(speed)  # Pass the speed value into the model and return the result
    prediction = str(result)
    return render_template("PowerResult.html",prediction=prediction)  #Render result on a new page
 if __name__ == '__main__':
