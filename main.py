@@ -21,7 +21,7 @@ def getPower(speed):
 @app.route("/predict",methods = ["POST"])
 def result():
  if request.method == "POST":
-   speed = first_name = request.form.get("speed")  # Get the speed value entered
+   speed = request.form.get("speed")  # Get the speed value entered
    result = getPower(speed)  # Pass the speed value into the model and return the result
    prediction = str(result)
    return render_template("PowerResult.html",prediction=prediction)  #Render result on a new page
